@@ -1,9 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TVS API Documentation - Developer Guide</title>
+    <title>Start Here</title>
+    <link rel="shortcut icon" href="{% static 'Fav.png' %}" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
@@ -340,7 +342,8 @@
         }
         
         .sidebar-nav {
-            padding: 0 20px 20px;
+            padding: 15px 20px;
+
         }
         
         .nav-section {
@@ -437,36 +440,37 @@
     
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 h-16 bg-white border-b border-gray-200 z-50">
-        <div class="flex items-center justify-between h-full px-6">
-            <div class="flex items-center space-x-4">
-                <button id="sidebarToggle" class="lg:hidden p-2 text-gray-600 hover:text-gray-900">
-                    <i class="ri-menu-line text-xl"></i>
-                </button>
-                <div class="flex items-center space-x-3">
-                    <div class="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                        <i class="ri-flashlight-line text-white"></i>
-                    </div>
-                    <div>
-                        <h1 class="font-display font-bold text-lg text-gray-900">TVS API</h1>
-                        <div class="flex items-center space-x-2">
-                            <div class="status-indicator"></div>
-                            <span class="text-xs text-gray-500">v1.0.0</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex items-center space-x-4">
-                <a href="https://github.com/ompandey07/tvs_api_map" target="_blank" 
-                   class="flex items-center space-x-2 px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors">
-                    <i class="ri-github-line"></i>
-                    <span class="hidden md:block text-sm">GitHub</span>
-                </a>
-                <button id="themeToggle" class="p-2 text-gray-600 hover:text-gray-900 transition-colors">
-                    <i class="ri-sun-line"></i>
-                </button>
-            </div>
-        </div>
+       <div class="flex items-center justify-between h-full px-6">
+           <div class="flex items-center space-x-4">
+               <button id="sidebarToggle" class="lg:hidden p-2 text-gray-600 hover:text-gray-900">
+                   <i class="ri-menu-line text-xl"></i>
+               </button>
+               <div class="flex items-center space-x-3">
+                   <div class="w-8 h-8 rounded-lg flex items-center justify-center">
+                       <img src="{% static 'Fav.png' %}" alt="Logo" class="w-5 h-5">
+                   </div>
+                   <h1 class="font-display font-bold text-lg text-gray-900">TVS API</h1>
+               </div>
+           </div>
+   
+           <!-- Centered Search Input -->
+           <div class="flex-1 flex justify-center px-6">
+               <div class="relative w-full max-w-md">
+                   <i class="ri-search-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                   <input type="text" id="searchInput" placeholder="Search documentation..."
+                       class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+               </div>
+           </div>
+   
+           <div class="flex items-center space-x-4">
+               <a href="https://github.com/ompandey07/tvs_api_map" target="_blank" 
+                  class="flex items-center space-x-2 px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors">
+                   <i class="ri-github-line"></i>
+               </a>
+           </div>
+       </div>
     </header>
+
 
     <!-- Breadcrumb -->
     <div class="breadcrumb mt-16">
@@ -482,12 +486,7 @@
         <!-- Sidebar -->
         <aside class="sidebar fixed top-16 left-0 w-80 h-screen bg-white border-r border-gray-200 z-40 overflow-y-auto">
             <!-- Search -->
-            <div class="sidebar-search">
-                <div class="relative">
-                    <i class="ri-search-line absolute left-3 top-3.5 text-gray-400"></i>
-                    <input type="text" id="searchInput" placeholder="Search documentation..." class="search-input">
-                </div>
-            </div>
+           
 
             <!-- Navigation -->
             <nav class="sidebar-nav">
@@ -586,18 +585,13 @@
                 <section id="overview" class="mb-16">
                     <div class="mb-12">
                         <div class="flex items-center space-x-4 mb-6">
-                            <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center">
-                                <i class="ri-flashlight-line text-2xl text-white"></i>
+                            <div class="w-16 h-16  rounded-2xl flex items-center justify-center">
+                                <img src="{% static 'Fav.png' %}" alt="Logo" class="w-10 h-10">
                             </div>
                             <div>
-                                <h1 class="font-display text-5xl font-bold text-gray-900 mb-2">TVS Site API Map</h1>
-                                <p class="text-xl text-gray-600 flex items-center gap-2">
-                                    <i class="ri-code-line"></i>
-                                    Django REST API for comprehensive data management
-                                </p>
+                                <h1 class="font-display text-3xl font-bold text-gray-900 mb-2 uppercase">TVS Site API Map</h1>
                             </div>
                         </div>
-
                         <div class="highlight-box">
                             <div class="flex items-start space-x-4">
                                 <i class="ri-information-line text-2xl text-blue-600 mt-1"></i>
@@ -617,67 +611,44 @@
                     </div>
 
                     <!-- Tech Stack -->
-                    <div class="mb-12">
-                        <h2 class="font-display text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
+                   <div class="mb-12">
+                        <h2 class="font-display text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
                             <i class="ri-stack-line text-blue-600"></i>
                             Technology Stack
                         </h2>
-                        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
-                            <div class="tech-badge">
-                                <div class="w-12 h-12 bg-blue-100 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                                    <i class="ri-code-line text-2xl text-blue-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900 text-sm">Python</h3>
-                                <p class="text-xs text-gray-600 mt-1">3.8+</p>
+                    
+                        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 text-center">
+                            <div>
+                                <i class="ri-code-line text-3xl text-blue-600"></i>
+                                <h3 class="font-medium text-gray-900 text-sm mt-2">Python</h3>
                             </div>
-                            <div class="tech-badge">
-                                <div class="w-12 h-12 bg-green-100 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                                    <i class="ri-server-line text-2xl text-green-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900 text-sm">Django</h3>
-                                <p class="text-xs text-gray-600 mt-1">4.2+</p>
+                            <div>
+                                <i class="ri-server-line text-3xl text-green-600"></i>
+                                <h3 class="font-medium text-gray-900 text-sm mt-2">Django</h3>
                             </div>
-                            <div class="tech-badge">
-                                <div class="w-12 h-12 bg-purple-100 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                                    <i class="ri-global-line text-2xl text-purple-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900 text-sm">DRF</h3>
-                                <p class="text-xs text-gray-600 mt-1">REST API</p>
+                            <div>
+                                <i class="ri-global-line text-3xl text-purple-600"></i>
+                                <h3 class="font-medium text-gray-900 text-sm mt-2">DRF</h3>
                             </div>
-                            <div class="tech-badge">
-                                <div class="w-12 h-12 bg-orange-100 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                                    <i class="ri-bar-chart-line text-2xl text-orange-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900 text-sm">Pandas</h3>
-                                <p class="text-xs text-gray-600 mt-1">Data Processing</p>
+                            <div>
+                                <i class="ri-bar-chart-line text-3xl text-orange-600"></i>
+                                <h3 class="font-medium text-gray-900 text-sm mt-2">Pandas</h3>
                             </div>
-                            <div class="tech-badge">
-                                <div class="w-12 h-12 bg-red-100 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                                    <i class="ri-shield-line text-2xl text-red-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900 text-sm">Security</h3>
-                                <p class="text-xs text-gray-600 mt-1">Token Auth</p>
+                            <div>
+                                <i class="ri-shield-line text-3xl text-red-600"></i>
+                                <h3 class="font-medium text-gray-900 text-sm mt-2">Security</h3>
                             </div>
-                            <div class="tech-badge">
-                                <div class="w-12 h-12 bg-indigo-100 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                                    <i class="ri-image-line text-2xl text-indigo-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900 text-sm">Pillow</h3>
-                                <p class="text-xs text-gray-600 mt-1">Image Processing</p>
+                            <div>
+                                <i class="ri-image-line text-3xl text-indigo-600"></i>
+                                <h3 class="font-medium text-gray-900 text-sm mt-2">Pillow</h3>
                             </div>
-                            <div class="tech-badge">
-                                <div class="w-12 h-12 bg-teal-100 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                                    <i class="ri-file-text-line text-2xl text-teal-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900 text-sm">Validation</h3>
-                                <p class="text-xs text-gray-600 mt-1">Serializers</p>
+                            <div>
+                                <i class="ri-file-text-line text-3xl text-teal-600"></i>
+                                <h3 class="font-medium text-gray-900 text-sm mt-2">Validation</h3>
                             </div>
-                            <div class="tech-badge">
-                                <div class="w-12 h-12 bg-cyan-100 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                                    <i class="ri-file-excel-line text-2xl text-cyan-600"></i>
-                                </div>
-                                <h3 class="font-semibold text-gray-900 text-sm">Excel</h3>
-                                <p class="text-xs text-gray-600 mt-1">OpenPyXL</p>
+                            <div>
+                                <i class="ri-file-excel-line text-3xl text-cyan-600"></i>
+                                <h3 class="font-medium text-gray-900 text-sm mt-2">Excel</h3>
                             </div>
                         </div>
                     </div>
@@ -2354,27 +2325,7 @@ CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "tvs_project.wsgi:a
             }
         }
 
-        // Theme toggle functionality
-        function initializeTheme() {
-            const themeToggle = document.getElementById('themeToggle');
-            
-            if (themeToggle) {
-                themeToggle.addEventListener('click', () => {
-                    // Theme switching logic would go here
-                    console.log('Theme toggle clicked');
-                    
-                    // Example: Toggle between sun and moon icons
-                    const icon = themeToggle.querySelector('i');
-                    if (icon.classList.contains('ri-sun-line')) {
-                        icon.classList.remove('ri-sun-line');
-                        icon.classList.add('ri-moon-line');
-                    } else {
-                        icon.classList.remove('ri-moon-line');
-                        icon.classList.add('ri-sun-line');
-                    }
-                });
-            }
-        }
+        
 
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
@@ -2385,7 +2336,6 @@ CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "tvs_project.wsgi:a
             initializeNavigation();
             initializeSearch();
             initializeSidebar();
-            initializeTheme();
             
             // Initial progress bar update
             updateProgressBar();
@@ -2402,6 +2352,23 @@ CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "tvs_project.wsgi:a
         // Handle window resize
         window.addEventListener('resize', () => {
             updateProgressBar();
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+          e.preventDefault();
+        });
+      
+        // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+        document.addEventListener('keydown', function (e) {
+          if (
+            e.key === "F12" || 
+            (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || 
+            (e.ctrlKey && e.key === "U") || 
+            (e.ctrlKey && e.shiftKey && e.key === "C")
+          ) {
+            e.preventDefault();
+          }
         });
     </script>
 </body>
